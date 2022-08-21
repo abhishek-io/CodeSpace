@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="list1" class="dropdown-check-list" tabindex="100">
+        <span class="anchor">Select</span>
+        <ul class="items">
+            <li><input type="checkbox" name="checkbox" id="chk-Title" onclick="Clicked(this)"/>Title </li>
+            <li><input type="checkbox" name="checkbox" id="chk-Desc" onclick="Clicked(this)"/>Description</li>
+            <li><input type="checkbox" name="checkbox"id="chk-keyword" onclick="Clicked(this)"/>Keywords </li>
+            <li><input type="checkbox" name="checkbox" id="chk-All" onclick="Clicked(this)"/>All </li>
+        </ul>
+    </div>
+    <div class="search-wrapper">
+        
+        <input type="search" id="search" placeholder="Search Music" data-search>
+    </div>
+    <div class="user-cards" data-music-card-container>
+        <template data-music-template>
+            <div class="card">
+                <img src="./musicPlaceHolder.png" class="image" alt="music place holder">
+
+                <div class="header" data-header>
+                    <div class="title" data-header-title></div>
+                </div>
+                <div class="body" data-body>
+                    <div class="duration" data-body-duration></div>
+                    <div class="description" data-body-description></div>
+                    <div class="play-vocal"><a href=""  data-body-play-vocal></a></div>
+                    <div class="lyrics"><a href=""  data-body-lyrics></a></div>
+                </div>
+            </div>
+        </template>
+    </div>
+</body>
+
+</html>
