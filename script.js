@@ -18,6 +18,11 @@ searchInput.addEventListener("input", (e) => {
     else if (check[1].checked == true) {
       IsVisible = music.description.toString().toLowerCase().includes(value)
     }
+    else if (check[2].checked == true) {
+      IsVisible = music.keywords.includes(value)
+      //console.log(music.keywords)
+      //console.log(IsVisible)
+    }
     else if (check[0].checked == true&&check[1].checked == true) {
       IsVisible = music.title.toLowerCase().includes(value) ||
         music.description.toString().toLowerCase().includes(value)
@@ -27,9 +32,6 @@ searchInput.addEventListener("input", (e) => {
         music.description.toString().toLowerCase().includes(value)
     }
     music.element.classList.toggle("hide", !IsVisible)
-
-
-    
   })
   let allElement = document.getElementsByClassName('description')
   for (var i = 0; i < allElement.length; i++) {
@@ -70,7 +72,7 @@ fetch('./data.json').then(response => {
     //console.log(abc)
     dataMusicCardContainer.append(card)
 
-    return { title: assets.title, description: assets.description, duration: assets.supplement_information, element: card }
+    return { title: assets.title, description: assets.description, duration: assets.supplement_information, element: card, keywords:assets.keywords }
   })
   
 
@@ -126,8 +128,8 @@ function findText(string, search) {
   const matches = []
   let i = -1
   let ind = 0
-console.log(string)
-console.log(search)
+//console.log(string)
+//console.log(search)
   do {
       i = string.indexOf(search, i + 1)
       if (i > -1) matches.push([i, i + search.length])
