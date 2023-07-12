@@ -10,6 +10,7 @@ int main(void){
         }
         printf("\n");
     }
+    printf("hello world!\n");
 
 }
 
